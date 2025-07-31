@@ -1,6 +1,6 @@
 export function Menu() {
   return (
-    <nav className="w-full flex items-center justify-between py-4 px-6 sm:px-8 lg:px-12">
+    <nav className="absolute top-0 left-0 right-0 flex items-center justify-between py-4 px-6 sm:px-8 lg:px-12 z-20">
       {/* Logo */}
       <div className="flex items-center">
         <span className="text-xl font-bold bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
