@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
 import { Menu } from "@/components/menu";
+import { CarouselDemo } from "@/components/caroussel";
 
 export default function Home() {
   return (
@@ -31,6 +32,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Carousel Section */}
+      <section className="relative z-10 py-16">
+        <CarouselDemo />
+      </section>
       
       {/* Footer Section - No Grid */}
       <section className="relative z-10">

@@ -18,6 +18,9 @@ export function Hero() {
           <Button className="w-full sm:w-auto">Get Started</Button>
           <Button variant="outline" className="w-full sm:w-auto">Learn More</Button>
         </div>
+        <p className="text-base text-muted-foreground leading-relaxed">
+            Trusted By
+        </p>
       </div>
 
       {/* Image Placeholder - always last on mobile, right on desktop */}
