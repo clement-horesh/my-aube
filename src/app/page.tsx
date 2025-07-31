@@ -30,6 +30,7 @@ export default function Home() {
           <Hero />
         </div>
       </section>
+
       
       {/* Footer Section - No Grid */}
       <section className="relative z-10">
