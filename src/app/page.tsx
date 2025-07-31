@@ -25,8 +25,8 @@ export default function Home() {
         {/* Menu Overlay */}
         <Menu />
         
-        {/* Hero Content - Centered in viewport */}
-        <div className="relative z-10 h-full flex items-center justify-center p-8 sm:p-20">
+        {/* Hero Content - With appropriate top padding for menu */}
+        <div className="relative z-10 h-full flex items-start lg:items-center justify-center p-8 sm:p-20 pt-16 sm:pt-20">
           <Hero />
         </div>
       </section>
