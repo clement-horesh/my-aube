@@ -1,83 +1,61 @@
-# Dark Mode Implementation
+# System-Only Dark Mode Implementation
 
-This project has been configured with a comprehensive dark mode system using Next.js, Tailwind CSS v4, and `next-themes`.
+This project has been configured with a simplified dark mode system that automatically follows the user's system preference using Next.js, Tailwind CSS v4, and `next-themes`.
 
 ## Features
 
-- 🌙 **Automatic Theme Detection**: Automatically detects and applies the user's system preference
-- 🎨 **Three Theme Options**: Light, Dark, and System (follows OS preference)
-- 💾 **Persistent Storage**: Theme preference is saved in localStorage
-- ⚡ **No Flash**: Prevents flash of unstyled content during theme switching
-- 🎯 **Accessible**: Proper ARIA labels and keyboard navigation
-- 🔧 **Customizable**: Easy to extend with additional themes
+- 🌙 **Automatic System Detection**: Automatically detects and applies the user's system preference
+- ⚡ **No Manual Controls**: Seamlessly follows OS theme without user intervention
+- 💾 **No Flash**: Prevents flash of unstyled content during theme switching
+- 🎯 **Accessible**: Proper theme-aware styling throughout the application
+- 🔧 **Simple**: Minimal configuration with maximum compatibility
 
 ## Components
 
 ### ThemeProvider
 Located at `src/components/theme-provider.tsx`
 - Wraps the entire application
-- Manages theme state and persistence
-- Handles system theme detection
-
-### ThemeToggle
-Located at `src/components/theme-toggle.tsx`
-- Simple three-button toggle (Light/Dark/System)
-- Visual indicators for active theme
-- Accessible with screen reader support
-
-### ThemeToggleDropdown
-Located at `src/components/theme-toggle-dropdown.tsx`
-- Dropdown-style theme selector
-- More compact UI option
-- Shows current theme with icon and label
+- Automatically detects system theme preference
+- Forces system theme mode (no manual switching)
 
 ### useTheme Hook
 Located at `src/hooks/use-theme.ts`
-- Custom hook for theme management
+- Provides current resolved theme (light/dark)
 - Handles hydration safely
-- Provides theme state and setter functions
+- Read-only theme information
 
 ## Usage
 
-### Basic Theme Toggle
-```tsx
-import { ThemeToggle } from "@/components/theme-toggle"
-
-export default function MyComponent() {
-  return (
-    <div>
-      <ThemeToggle />
-    </div>
-  )
-}
-```
-
-### Dropdown Theme Toggle
-```tsx
-import { ThemeToggleDropdown } from "@/components/theme-toggle-dropdown"
-
-export default function MyComponent() {
-  return (
-    <div>
-      <ThemeToggleDropdown />
-    </div>
-  )
-}
-```
-
-### Custom Theme Logic
+### Get Current Theme
 ```tsx
 import { useTheme } from "@/hooks/use-theme"
 
 export default function MyComponent() {
-  const { theme, setTheme, mounted } = useTheme()
+  const { theme, mounted } = useTheme()
 
   if (!mounted) return null
 
   return (
-    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+    <div>
       Current theme: {theme}
-    </button>
+    </div>
+  )
+}
+```
+
+### Conditional Styling
+```tsx
+import { useTheme } from "@/hooks/use-theme"
+
+export default function MyComponent() {
+  const { theme, mounted } = useTheme()
+
+  if (!mounted) return null
+
+  return (
+    <div className={theme === 'dark' ? 'dark-specific-class' : 'light-specific-class'}>
+      Content
+    </div>
   )
 }
 ```
@@ -122,17 +100,18 @@ Use these Tailwind classes for theme-aware styling:
 
 ## Configuration
 
-The theme provider is configured in `src/app/layout.tsx`:
+The theme provider is configured in `src/components/theme-provider.tsx`:
 
 ```tsx
-<ThemeProvider
+<NextThemesProvider 
   attribute="class"
   defaultTheme="system"
   enableSystem
   disableTransitionOnChange
+  forcedTheme="system"
 >
   {children}
-</ThemeProvider>
+</NextThemesProvider>
 ```
 
 ### Options
@@ -140,30 +119,14 @@ The theme provider is configured in `src/app/layout.tsx`:
 - `defaultTheme="system"` - Defaults to system preference
 - `enableSystem` - Enables system theme detection
 - `disableTransitionOnChange` - Prevents transition flash
-
-## Adding New Themes
-
-To add a new theme:
-
-1. Add CSS variables to `globals.css`:
-```css
-.theme-custom {
-  --background: your-color;
-  --foreground: your-color;
-  /* ... other variables */
-}
-```
-
-2. Update theme toggle components to include the new option
-
-3. Add the theme to the ThemeProvider configuration
+- `forcedTheme="system"` - Forces system theme only
 
 ## Best Practices
 
 1. **Always use theme-aware classes**: Use `bg-background` instead of `bg-white`
 2. **Test both themes**: Ensure your components look good in both light and dark modes
 3. **Handle loading states**: Use the `mounted` state from `useTheme` to prevent hydration issues
-4. **Accessibility**: Include proper ARIA labels and keyboard navigation
+4. **Accessibility**: Ensure proper contrast ratios in both themes
 5. **Performance**: Use CSS variables for smooth transitions
 
 ## Troubleshooting
@@ -172,10 +135,21 @@ To add a new theme:
 - Ensure `suppressHydrationWarning` is set on the `<html>` element
 - Use the `mounted` state from `useTheme` hook
 
-### Theme Not Persisting
+### Theme Not Following System
 - Check that `next-themes` is properly installed
-- Verify localStorage is available in the browser
+- Verify the system theme detection is working in your OS
 
 ### Styling Issues
 - Ensure all colors use theme-aware CSS variables
-- Check that Tailwind classes are using the correct semantic names 
+- Check that Tailwind classes are using the correct semantic names
+
+## Migration from Manual Theme Controls
+
+If you previously had manual theme controls and want to switch to system-only:
+
+1. Remove theme toggle components
+2. Update ThemeProvider to use `forcedTheme="system"`
+3. Simplify useTheme hook to only provide read-only theme information
+4. Remove any manual theme switching logic from your components
+
+The system will now automatically follow the user's OS preference without any manual intervention required. 
