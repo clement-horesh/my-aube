@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function Menu() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,9 +24,15 @@ export function Menu() {
     }`}>
       {/* Logo */}
       <div className="flex items-center">
-        <span className="text-xl font-bold bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-          Aube
-        </span>
+        <div className="relative w-20 h-8">
+          <Image
+            src="/Asset 1.svg"
+            alt="Aube Logo"
+            fill
+            className="object-contain filter dark:invert"
+            priority
+          />
+        </div>
       </div>
 
       {/* Navigation Items */}

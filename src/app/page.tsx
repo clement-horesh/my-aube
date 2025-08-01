@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
 import { Menu } from "@/components/menu";
 import { CarouselDemo } from "@/components/caroussel";
+import { TrustedBy } from "@/components/trusted-by";
 
 export default function Home() {
   return (
@@ -30,6 +31,11 @@ export default function Home() {
         <div className="relative z-10 h-full flex items-start lg:items-center justify-center p-8 sm:p-20 pt-16 sm:pt-20">
           <Hero />
         </div>
+      </section>
+
+      {/* Trusted By Section */}
+      <section className="relative z-10 py-16">
+        <TrustedBy />
       </section>
 
       {/* Carousel Section */}
