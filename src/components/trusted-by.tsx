@@ -1,6 +1,12 @@
+"use client"
+
 import Image from "next/image";
 
 export function TrustedBy() {
+  const handleDivClick = () => {
+    window.open('https://samsung.com', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center space-y-8">
@@ -15,9 +21,12 @@ export function TrustedBy() {
         </div>
 
         {/* Logos */}
-        <div className="flex flex-row items-center justify-center gap-50 text-foreground">
-          {/* Samsung SVG logo, forced to same gray as text-muted-foreground */}
-          <span className="flex items-center justify-center">
+        <div 
+          className="relative flex flex-row items-center justify-center gap-50 text-foreground group cursor-pointer transition-all duration-300"
+          onClick={handleDivClick}
+        >
+          {/* Samsung SVG logo */}
+          <div className="flex items-center justify-center transition-all duration-300 group-hover:blur-sm">
             <svg
               viewBox="0 0 7051.4024 1080"
               className="h-5"
@@ -34,9 +43,10 @@ export function TrustedBy() {
                 </g>
               </g>
             </svg>
-          </span>
+          </div>
+
           {/* HPE logo */}
-          <span className="flex items-center justify-center ">
+          <div className="flex items-center justify-center transition-all duration-300 group-hover:blur-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1919.94 548.57"
@@ -48,10 +58,10 @@ export function TrustedBy() {
               <path d="M1380.03,548.57c-.43-114.41-.43-228.81-.43-343.77h539.91c.43,34.76.43,69.52,0,104.71-142.98.43-285.52.43-428.08.43v134.4h428.51v104.23h-539.91Z" />
               <path d="M1919.94,103.8c-142.81.43-285.62.43-428.78.43v51.01h-111.56V.43C1559.6,0,1739.61,0,1919.94,0v103.8Z" />
             </svg>
-          </span>
-          {/* Onepoint logo */}
+          </div>
 
-          <span className="flex items-center justify-center">
+          {/* Onepoint logo */}
+          <div className="flex items-center justify-center transition-all duration-300 group-hover:blur-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 115.9 21.8"
@@ -64,7 +74,28 @@ export function TrustedBy() {
                 <path d="M115.9,15.02c0,1.65-1.32,3-2.97,3-.01,0-.02,0-.03,0-1.65,0-3-1.32-3-2.97,0-.01,0-.02,0-.03,0-1.65,1.32-3,2.97-3,.01,0,.02,0,.03,0,1.65-.05,3,1.31,3,3Z" />
               </g>
             </svg>
-          </span>
+          </div>
+
+          {/* Centered "See Work" overlay with chevron */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <span className="text-sm font-medium text-foreground bg-background/90 border border-foreground/15 px-2 py-1 rounded-xl flex items-center gap-1">
+              See Work
+              <svg 
+                className="w-3 h-3" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7" 
+                />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
     </div>
