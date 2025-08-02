@@ -36,7 +36,7 @@ export default function Home() {
       </section>
 
       {/* Carousel Section */}
-      <section className="relative z-10 py-16">
+      <section className="relative mt-40 z-10 py-16">
         <CarouselDemo />
       </section>
       
