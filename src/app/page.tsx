@@ -28,7 +28,7 @@ export default function Home() {
         <Menu />
         
         {/* Hero Content - With appropriate top padding for menu */}
-        <div className="relative z-10 h-full flex items-start lg:items-center justify-center p-8 sm:p-20 pt-16 sm:pt-20">
+        <div className="z-10 h-full pt-16 overflow-hidden">
           <Hero />
         </div>
       </section>

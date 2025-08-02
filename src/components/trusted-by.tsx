@@ -12,10 +12,10 @@ export function TrustedBy() {
       <div className="text-center space-y-8">
         {/* Centered text */}
         <div className="mb-20">
-          <h2 className="text-lg sm:text-xl text-foreground">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground">
             Powering the world's best product teams.
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
+          <p className="text-lg sm:text-xl font-medium text-muted-foreground">
             From next-gen startups to established enterprises.
           </p>
         </div>
