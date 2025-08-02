@@ -8,19 +8,16 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen flex flex-col">
       {/* Hero Section with Grid Background */}
-      <section className="h-screen relative">
+      <section className="relative">
         {/* Grid Background - Only for Hero */}
         <div 
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none z-0"
           style={{
             backgroundImage: `
-              linear-gradient(to bottom, var(--grid-gradient-start) 0%, transparent 40%),
               linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),
               linear-gradient(var(--grid-line-color) 1px, transparent 1px)
             `,
-            backgroundSize: '100% 100%, 20px 20px, 20px 20px',
-            maskImage: 'linear-gradient(to bottom, black 0%, transparent 90%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 90%)',
+            backgroundSize: '20px 20px, 20px 20px',
           }}
         />
         
@@ -28,7 +25,7 @@ export default function Home() {
         <Menu />
         
         {/* Hero Content - With appropriate top padding for menu */}
-        <div className="z-10 h-full pt-16 overflow-hidden">
+        <div className="relative z-20 h-250 pt-32 overflow-hidden">
           <Hero />
         </div>
       </section>
