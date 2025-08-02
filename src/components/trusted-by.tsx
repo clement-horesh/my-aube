@@ -8,7 +8,7 @@ export function TrustedBy() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center space-y-8">
         {/* Centered text */}
         <div className="mb-20">

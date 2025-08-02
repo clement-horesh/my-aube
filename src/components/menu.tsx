@@ -17,44 +17,47 @@ export function Menu() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-6 sm:px-8 lg:px-12 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-background/80 backdrop-blur-md border-b border-border/20' 
         : 'bg-transparent'
     }`}>
-      {/* Logo */}
-      <div className="flex items-center">
-        <div className="relative w-20 h-8">
-          <Image
-            src="/Asset 1.svg"
-            alt="Aube Logo"
-            fill
-            className="object-contain filter dark:invert"
-            priority
-          />
+      {/* Content container with max-width */}
+      <div className="w-full max-w-5xl mx-auto flex items-center justify-between py-3">
+        {/* Logo */}
+        <div className="flex items-center">
+          <div className="relative w-15 h-8">
+            <Image
+              src="/Asset 1.svg"
+              alt="Aube Logo"
+              fill
+              className="object-contain filter dark:invert"
+              priority
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Navigation Items */}
-      <div className="flex items-center space-x-6">
-        <a 
-          href="#overview" 
-          className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-        >
-          Overview
-        </a>
-        <a 
-          href="#core" 
-          className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-        >
-          Core
-        </a>
-        <a 
-          href="#contact" 
-          className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-        >
-          Contact
-        </a>
+        {/* Navigation Items */}
+        <div className="flex items-center space-x-6">
+          <a 
+            href="#overview" 
+            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          >
+            Overview
+          </a>
+          <a 
+            href="#core" 
+            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          >
+            Core
+          </a>
+          <a 
+            href="#contact" 
+            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          >
+            Contact
+          </a>
+        </div>
       </div>
     </nav>
   );
