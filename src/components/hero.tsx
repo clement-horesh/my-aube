@@ -26,9 +26,9 @@ export function Hero() {
       
       {/* Hero Content - With appropriate top padding for menu */}
       <div className="relative z-20 pt-32 ">
-        <div className="flex flex-col items-center px-4 relative">
+        <div className="flex flex-col items-center  relative">
           {/* Text Content - Limited to 5xl width and centered */}
-          <div className="w-full max-w-5xl mx-auto">
+          <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl px-4 mx-auto">
             <HeroText />
           </div>
           
