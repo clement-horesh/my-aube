@@ -22,7 +22,7 @@ export function TrustedBy() {
 
         {/* Logos */}
         <div 
-          className="relative flex flex-row items-center justify-center gap-50 text-foreground group cursor-pointer transition-all duration-300"
+          className="relative flex flex-col sm:flex-row items-center justify-center gap-20 sm:gap-30 lg:gap-50 text-foreground group cursor-pointer transition-all duration-300"
           onClick={handleDivClick}
         >
           {/* Samsung SVG logo */}
