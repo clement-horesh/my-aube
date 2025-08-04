@@ -25,19 +25,19 @@ export function HeroImage() {
       <div className="relative max-w-[91%] mx-auto">
         {/* Background cards for stacked effect - vertical stacking with scaling */}
         <div 
-          className={`absolute -top-2 sm:-top-4 lg:-top-10 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[90%] h-full bg-gray-300/50 dark:bg-gray-800/50 rounded-lg border border-gray-600/10 dark:border-gray-300/10 scale-100 transition-all duration-1000 ease-out ${
+          className={`absolute -top-2 sm:-top-4 lg:-top-10 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[90%] h-full bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 dark:border-neutral-300/10 scale-100 transition-all duration-1000 ease-out ${
             showCard1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         ></div>
         <div 
-          className={`absolute -top-1 sm:-top-2 lg:-top-5 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[95%] h-full bg-gray-300/50 dark:bg-gray-800/50 rounded-lg border border-gray-600/10 dark:border-gray-300/10 scale-100 transition-all duration-1000 ease-out ${
+          className={`absolute -top-1 sm:-top-2 lg:-top-5 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[95%] h-full bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 dark:border-neutral-300/10 scale-100 transition-all duration-1000 ease-out ${
             showCard2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         ></div>
 
         {/* Main card */}
         <div 
-          className={`relative bg-gray-300/50 dark:bg-gray-800/50 rounded-lg border border-gray-600/10 backdrop-blur-xs dark:border-gray-300/10 p-1 sm:p-2 lg:p-5 transition-all duration-1000 ease-out ${
+          className={`relative bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 backdrop-blur-xs dark:border-neutral-300/10 p-1 sm:p-2 lg:p-5 transition-all duration-1000 ease-out ${
             showMainCard ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -46,7 +46,7 @@ export function HeroImage() {
             alt="Distributor Report"
             width={800}
             height={300}
-            className="w-full h-auto border border-gray-600/10 dark:border-gray-300/30 rounded-lg"
+            className="w-full h-auto border border-neutral-600/10 dark:border-neutral-300/30 rounded-lg"
             priority
           />
         </div>

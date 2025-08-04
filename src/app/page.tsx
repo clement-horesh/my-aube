@@ -1,8 +1,9 @@
 "use client"
 import { Footer } from "@/components/footer";
-import { CarouselDemo } from "@/components/caroussel";
+import { CarouselDemo } from "@/components/latest-work";
 import { TrustedBy } from "@/components/trusted-by";
 import { Hero } from "@/components/hero";
+import { GradientSection } from "@/components/core-offer";
 
 export default function Home() {
   return (
@@ -13,6 +14,11 @@ export default function Home() {
       {/* Trusted By Section */}
       <section className="relative z-10 py-16">
         <TrustedBy />
+      </section>
+
+      {/* Gradient Section */}
+      <section className="relative z-10">
+        <GradientSection />
       </section>
 
       {/* Carousel Section */}

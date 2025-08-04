@@ -78,7 +78,7 @@ export function TrustedBy() {
 
           {/* Centered "See Work" overlay with chevron */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            <span className="text-sm font-medium text-foreground bg-background/90 border border-foreground/15 px-2 py-1 rounded-xl flex items-center gap-1">
+            <span className="text-sm font-medium text-foreground bg-neutral-100 dark:bg-neutral-900 border border-foreground/15 px-2 py-1 rounded-xl flex items-center gap-1">
               See Work
               <svg 
                 className="w-3 h-3" 
