@@ -28,7 +28,7 @@ export function Hero() {
       <div className="relative z-20 pt-32 ">
         <div className="flex flex-col items-center  relative">
           {/* Text Content - Limited to 5xl width and centered */}
-          <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl px-4 mx-auto">
+          <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl transition-all duration-1000 xl:max-w-5xl px-4 mx-auto">
             <HeroText />
           </div>
           

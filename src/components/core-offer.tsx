@@ -5,7 +5,9 @@ import { Separator } from "@/components/ui/separator"
 export function GradientSection() {
   return (
     <div className="w-full bg-gradient-to-b from-neutral-100 to-transparent dark:from-neutral-900 dark:to-transparent" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
-      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-50 pb-30">
+        <h1 className="text-[56px] leading-[1.1] font-[538] tracking-[-0.0325em]">Expertise that<br/>skyrockets you</h1>
+        
         {/* Top Section */}
         <div className="h-[150px] flex items-center justify-center">
           <h2 className="text-2xl font-bold text-foreground">
@@ -14,7 +16,7 @@ export function GradientSection() {
         </div>
 
         {/* Separator */}
-        <Separator className="my-8" />
+        <Separator />
 
         {/* Middle Section - Two side by side */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,7 +36,7 @@ export function GradientSection() {
         </div>
 
         {/* Separator */}
-        <Separator className="my-8" />
+        <Separator />
 
         {/* Bottom Section */}
         <div className="h-[150px] flex items-center justify-center">
