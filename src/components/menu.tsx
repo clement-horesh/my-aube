@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function Menu() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,6 +17,17 @@ export function Menu() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -26,7 +38,10 @@ export function Menu() {
       <div className="w-full sm:max-w-2xl md:max-w-3xl transition-all duration-1000 lg:max-w-4xl xl:max-w-5xl mx-auto flex items-center justify-between py-3 px-4">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="relative w-15 h-8">
+          <button 
+            onClick={scrollToTop}
+            className="relative w-15 h-8 cursor-pointer"
+          >
             <Image
               src="/Asset 1.svg"
               alt="Aube Logo"
@@ -34,29 +49,28 @@ export function Menu() {
               className="object-contain filter dark:invert"
               priority
             />
-          </div>
+          </button>
         </div>
 
         {/* Navigation Items */}
         <div className="flex items-center space-x-6">
-          <a 
-            href="#overview" 
-            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          <button 
+            onClick={() => scrollToSection('core-offer')}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           >
             Overview
-          </a>
-          <a 
-            href="#core" 
-            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          </button>
+          <button 
+            onClick={() => scrollToSection('latest-work')}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           >
-            Core
-          </a>
-          <a 
-            href="#contact" 
-            className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+            Work
+          </button>
+          <Button 
+            className="cursor-pointer"
           >
             Contact
-          </a>
+          </Button>
         </div>
       </div>
     </nav>

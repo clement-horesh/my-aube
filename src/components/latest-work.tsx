@@ -11,7 +11,7 @@ import {
 
 export function CarouselDemo() {
   return (
-    <div className="w-full bg-gradient-to-b from-neutral-100 to-transparent dark:from-neutral-900 dark:to-transparent" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
+    <div id="latest-work" className="w-full bg-gradient-to-b from-neutral-100 to-transparent dark:from-neutral-900 dark:to-transparent" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-50 pb-30">
       <h1 className="text-[56px] leading-[1.1] font-[538] tracking-[-0.0325em]">Our Latest<br/>Work</h1>
       <Carousel 
