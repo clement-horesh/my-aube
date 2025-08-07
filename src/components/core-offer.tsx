@@ -15,7 +15,7 @@ export function GradientSection() {
             Data Analyse
           </h2>
           <p className="max-w-full md:max-w-[50%] mb-6">Align your team around a unified data strategy. Plan, manage, and track all analysis initiatives with Aube visual data planning tools.</p>
-          <div className="relative w-full h-10">
+          <div className="relative h-120 overflow-visible">
             <Image
               src="/Section 1.png"
               alt="Data Analysis Section"

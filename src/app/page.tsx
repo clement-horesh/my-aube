@@ -7,7 +7,7 @@ import { GradientSection } from "@/components/core-offer";
 
 export default function Home() {
   return (
-    <div className="font-sans min-h-screen flex flex-col">
+    <main className="font-sans min-h-screen flex flex-col">
       {/* Hero Section */}
       <Hero />
 
@@ -30,6 +30,6 @@ export default function Home() {
       <section className="relative z-10">
         <Footer />
       </section>
-    </div>
+    </main>
   );
 }
