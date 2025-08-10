@@ -84,11 +84,11 @@ export function CarouselDemo() {
               <DialogTrigger asChild>
                 <div className="p-1 max-w-xs mx-auto">
                   <Card className="group cursor-pointer">
-                    <CardContent className="relative flex aspect-square items-center justify-center p-6">
+                    <CardContent className="relative flex aspect-square items-center justify-center">
                       <div className="text-center">
                         <div className="text-3xl font-semibold">Samsung</div>
                       </div>
-                      <button aria-label="Open details" className="absolute bottom-3 right-3 inline-flex items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground group-hover:bg-muted/80 group-hover:text-foreground transition-colors border border-border/40 w-11 h-11 cursor-pointer">
+                      <button aria-label="Open details" className="absolute bottom-0 right-3 inline-flex items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground group-hover:bg-muted/80 group-hover:text-foreground transition-colors border border-border/40 w-11 h-11 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[22px] h-[22px]">
                           <path d="M12 5v14M5 12h14" />
                         </svg>
@@ -113,7 +113,7 @@ export function CarouselDemo() {
                       <div className="text-center">
                         <div className="text-3xl font-semibold">HPE</div>
                       </div>
-                      <button aria-label="Open details" className="absolute bottom-3 right-3 inline-flex items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground group-hover:bg-muted/80 group-hover:text-foreground transition-colors border border-border/40 w-11 h-11 cursor-pointer">
+                      <button aria-label="Open details" className="absolute bottom-0 right-3 inline-flex items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground group-hover:bg-muted/80 group-hover:text-foreground transition-colors border border-border/40 w-11 h-11 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[22px] h-[22px]">
                           <path d="M12 5v14M5 12h14" />
                         </svg>
