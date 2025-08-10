@@ -92,4 +92,27 @@
       -webkit-mask-image: radial-gradient(80% 60% at 50% 35%, #d9d9d9 0, hsla(0,0%,45%,0) 100%);
     }
   }
+
+  /* Edge fade for horizontal scrollers */
+  .edge-fade-mask {
+    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  }
+}
+
+/* Right-to-left marquee animation for mobile logos */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer components {
+  .marquee-rtl {
+    animation: marquee-rtl 24s linear infinite;
+    will-change: transform;
+  }
 }
