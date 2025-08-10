@@ -25,7 +25,7 @@ export function GradientSection() {
             alt="Data Analysis Section"
             fill
             className="object-cover object-center"
-            priority
+            loading="lazy"
           />
         </div>
       </div>

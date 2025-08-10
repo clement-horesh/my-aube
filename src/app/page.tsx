@@ -16,6 +16,9 @@ export default function Home() {
         <TrustedBy />
       </section>
 
+      {/* Spacer Section (empty for now) */}
+      <section className="relative z-10 py-12" id="spacer-below-trusted-by"></section>
+
       {/* Gradient Section */}
       <section className="relative z-10">
         <GradientSection />

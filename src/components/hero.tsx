@@ -73,7 +73,7 @@ function HeroImage() {
             width={800}
             height={300}
             className="w-full h-auto border border-neutral-600/10 dark:border-neutral-300/30 rounded-lg"
-            priority
+            loading="lazy"
           />
         </div>
       </div>

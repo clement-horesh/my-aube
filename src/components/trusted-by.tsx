@@ -3,6 +3,12 @@
 import Image from "next/image";
 
 export function TrustedBy() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
   const handleDivClick = () => {
     window.open('https://samsung.com', '_blank', 'noopener,noreferrer');
   };
@@ -77,24 +83,31 @@ export function TrustedBy() {
           </div>
 
           {/* Centered "See Work" overlay with chevron */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            <span className="text-sm font-medium text-foreground bg-neutral-100 dark:bg-neutral-900 border border-foreground/15 px-2 py-1 rounded-xl flex items-center gap-1">
+          <div className="absolute inset-0 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollToSection('latest-work')
+              }}
+              className="pointer-events-auto text-sm font-medium text-foreground bg-neutral-100 dark:bg-neutral-900 border border-foreground/15 px-3 py-1.5 rounded-4xl cursor-pointer flex items-center gap-1"
+            >
               See Work
-              <svg 
-                className="w-3 h-3" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
+              <svg
+                className="w-3 h-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
                 />
               </svg>
-            </span>
+            </button>
           </div>
         </div>
       </div>
