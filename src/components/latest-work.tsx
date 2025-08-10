@@ -79,7 +79,7 @@ export function CarouselDemo() {
       >
         <CarouselContent>
           {/* Samsung */}
-          <CarouselItem className="basis-1/3 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/3">
             <Dialog>
               <DialogTrigger asChild>
                 <div className="p-1 max-w-xs mx-auto">
@@ -104,7 +104,7 @@ export function CarouselDemo() {
           </CarouselItem>
 
           {/* HPE */}
-          <CarouselItem className="basis-1/3 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/3">
             <Dialog>
               <DialogTrigger asChild>
                 <div className="p-1 max-w-xs mx-auto">
@@ -129,7 +129,7 @@ export function CarouselDemo() {
           </CarouselItem>
 
           {/* More coming soon */}
-          <CarouselItem className="basis-1/3 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/3">
             <div className="p-1 max-w-xs mx-auto">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">

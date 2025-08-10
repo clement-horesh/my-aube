@@ -7,7 +7,7 @@ export function GradientSection() {
   return (
     <div id="core-offer" className="w-full bg-gradient-to-b from-neutral-100 to-neutral-0 dark:from-neutral-900 dark:to-neutral-950" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-4 pt-50 pb-30">
-        <h1 className="text-[56px] leading-[1.1] font-[538] tracking-[-0.0325em]">Production‑grade<br/>Data ETL</h1>
+        <h1 className="text-3xl leading-[1.1] font-[538] tracking-[-0.0325em]">Production‑grade<br/>Data ETL</h1>
         
         {/* Top Section */}
 
@@ -18,9 +18,9 @@ export function GradientSection() {
       </div>
       
       {/* Image section that extends beyond container width */}
-      <div className="w-full  -mt-40 mb-2">
+      <div className="w-full -mt-40 mb-2">
         <div 
-          className="relative w-full max-w-7xl mx-auto h-160 responsive-mask"
+          className="relative w-full max-w-7xl mx-auto h-120 md:h-160 responsive-mask"
         >
           <Image
             src="/Section 1.png"
@@ -40,7 +40,7 @@ export function GradientSection() {
         <div className="grid grid-cols-1 md:[grid-template-columns:1fr_auto_1fr] gap-0 items-stretch">
           <div className="flex items-stretch pt-10">
             <div className="w-full">
-              <h2 className="text-2xl sm:text-3xl font-medium mb-2">Production‑grade<br/>Data ETL</h2>
+              <h2 className="text-lg font-medium mb-2">Production‑grade<br/>Data ETL</h2>
               <p className="max-w-full mb-6 mt-8">
             We design and operate resilient ETL pipelines that collect data from your core systems, clean and standardize it, and deliver fast, trusted tables to your warehouse and BI. Built for reliability, observability and scale.
           </p>
