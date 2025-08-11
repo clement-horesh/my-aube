@@ -69,7 +69,7 @@ export function CarouselDemo() {
   return (
     <div id="latest-work" className="w-full bg-gradient-to-b from-neutral-100 to-transparent dark:from-neutral-900 dark:to-transparent" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-50 pb-30">
-      <h1 className="text-[56px] leading-[1.1] font-[538] tracking-[-0.0325em]">Our Latest<br/>Work</h1>
+      <h1 className="text-6xl leading-[1.1] font-[538] tracking-[-0.0325em]">Our Latest<br/>Work</h1>
       <Carousel 
         className="w-full pt-15"
         opts={{
@@ -79,7 +79,7 @@ export function CarouselDemo() {
       >
         <CarouselContent>
           {/* Samsung */}
-          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/2">
             <Dialog>
               <DialogTrigger asChild>
                 <div className="p-1 max-w-xs mx-auto">
@@ -104,7 +104,7 @@ export function CarouselDemo() {
           </CarouselItem>
 
           {/* HPE */}
-          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/2">
             <Dialog>
               <DialogTrigger asChild>
                 <div className="p-1 max-w-xs mx-auto">
@@ -129,7 +129,7 @@ export function CarouselDemo() {
           </CarouselItem>
 
           {/* More coming soon */}
-          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="basis-1/1 md:basis-1/2 lg:basis-1/2">
             <div className="p-1 max-w-xs mx-auto">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">

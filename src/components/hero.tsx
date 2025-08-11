@@ -9,7 +9,7 @@ import { ChevronRight } from "lucide-react";
 function HeroText() {
   return (
     <div className="flex flex-col gap-4 text-center sm:text-left relative z-20">
-      <h1 className="text-5xl sm:text-5xl lg:text-6xl max-w-3xl transition-all duration-1000 font-bold bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-gray-400 dark:via-gray-200 dark:to-white bg-clip-text text-transparent leading-none">
+      <h1 className="text-5xl sm:text-5xl lg:text-6xl max-w-xl transition-all duration-1000 font-bold bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-gray-400 dark:via-gray-200 dark:to-white bg-clip-text text-transparent leading-none">
       Mettez en <span className="bg-gradient-to-r from-rose-400 via-orange-400 via-yellow-400 via-sky-50 via-sky-300 to-sky-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,146,60,0.3)] dark:drop-shadow-[0_0_10px_rgba(251,146,60,0.4)] animate-[pulse_2s_ease_forwards]">lumière</span> vos performances.
 
       </h1>
