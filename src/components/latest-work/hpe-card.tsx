@@ -38,8 +38,8 @@ export function HpeCard() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="p-1 max-w-xs mx-auto">
-          <Card className="group cursor-pointer relative overflow-hidden py-0">
+        <div className="p-1">
+          <Card className="group cursor-pointer relative overflow-hidden py-0 h-full">
             {/* Grid Background */}
             <div 
               className="absolute inset-0 pointer-events-none z-0"

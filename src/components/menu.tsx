@@ -35,7 +35,7 @@ export function Menu() {
         : 'bg-transparent'
     }`}>
       {/* Content container with max-width */}
-      <div className="w-full sm:max-w-2xl md:max-w-3xl transition-all duration-1000 lg:max-w-4xl xl:max-w-5xl mx-auto flex items-center justify-between py-3 px-4">
+      <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl transition-all duration-1000  mx-auto flex items-center justify-between py-3 px-4">
         {/* Logo */}
         <div className="flex items-center">
           <button 
