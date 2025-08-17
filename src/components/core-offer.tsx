@@ -2,6 +2,7 @@
 
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
+import DotConnectorGrid from "@/components/dot-grid"
 
 export function GradientSection() {
   return (
@@ -210,7 +211,14 @@ export function GradientSection() {
         {/* Bottom Section */}
         <div className="flex flex-col pt-10">
           <h2 className="text-xl font-semibold text-foreground">Business Analyse</h2>
-          <p className="max-w-full text-foreground/50 mb-10 mt-5">Ceci est un texte de test</p>
+          <p className="max-w-full text-foreground/50 mb-6 mt-5">
+            Nous aidons les équipes à relier les points entre données, processus et objectifs
+            métiers. En partant des faits, nous clarifions les questions clés, identifions les
+            leviers de croissance et transformons les signaux faibles en décisions concrètes.
+            L’analyse ne s’arrête pas aux chiffres : elle connecte les informations éparses pour
+            raconter une histoire utile, aligner les parties prenantes et guider l’action.
+          </p>
+          <DotConnectorGrid rows={14} cols={21} height={520} dotRadius={3} className="bg-transparent" />
         </div>
       </div>
     </div>
