@@ -13,22 +13,53 @@ import Image from "next/image"
 function SamsungModalContent() {
   return (
     <div className="space-y-4">
+      {/* Top header area with grid, gradient, and logo */}
+      <div className="relative h-[140px] overflow-hidden -mx-6">
+        <div 
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),
+              linear-gradient(var(--grid-line-color) 1px, transparent 1px)
+            `,
+            backgroundSize: '20px 20px, 20px 20px',
+          }}
+        />
+        <Image
+          src="/SamsungS25.svg"
+          alt="Samsung Logo"
+          width={200}
+          height={100}
+          className="absolute top-3 right-3 w-[180px] h-auto opacity-60 grayscale contrast-75 dark:invert pointer-events-none z-10"
+          priority={false}
+        />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background via-background/90 to-transparent pointer-events-none z-20" />
+      </div>
       <DialogHeader>
         <DialogTitle>Samsung — Data Analytics Enablement for B2B Growth</DialogTitle>
         <DialogDescription>
           Overhauled analytics foundations to support rapid decision-making across B2B e‑commerce, Channel and Marketing.
         </DialogDescription>
       </DialogHeader>
-      <div className="space-y-4 text-sm leading-relaxed text-foreground/90">
-        <p>
-          To meet a sharp rise in analytical needs across the B2B organization, we rebuilt Samsung's decision stack for the e‑commerce site, Channel operations and Marketing. We delivered a coherent analytics layer that executives and practitioners could rely on for faster, more confident decisions across sell‑in, sell‑through and campaign performance.
-        </p>
-        <p>
-          We created roughly ten production‑grade dashboards and Excel assets to operationalize market and channel intelligence. These assets now support about thirty stakeholders, including management, with consistent definitions and drill‑downs that cut through noisy signals. We also rolled out an automated PDF generation flow that consolidates partner data for roughly twenty key account managers, eliminating manual assembly and improving cadence and accuracy for the field.
-        </p>
-        <p>
-          Alongside the product organization, we supported launches with quantified business cases and live KPI tracking. This ensured that new product introductions were governed by data from day one, with alignment between Marketing, Channel and e‑commerce on goals, levers and corrective actions.
-        </p>
+      <div className="space-y-5 text-sm leading-relaxed text-foreground/90">
+        <div className="space-y-2">
+          <h3 className="text-base font-semibold">Contexte et objectif</h3>
+          <p>
+            Pour répondre à une forte hausse des besoins analytiques au sein de l’organisation B2B, nous avons refondu la chaîne de décision de Samsung pour l’e‑commerce, les opérations Channel et le Marketing. Nous avons livré une couche d’analytique cohérente, fiable pour les dirigeants et les équipes, accélérant des décisions plus sûres sur le sell‑in, le sell‑out et la performance des campagnes.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-base font-semibold">Livrables clés</h3>
+          <p>
+            Nous avons créé une dizaine de tableaux de bord et actifs Excel prêts pour la production afin d’opérationnaliser l’intelligence marché et channel. Ces actifs servent désormais ~30 parties prenantes, management inclus, avec des définitions alignées et des explorations qui filtrent le bruit. Nous avons également déployé un flux d’automatisation PDF consolidant les données partenaires pour ~20 KAM, supprimant l’assemblage manuel et améliorant la cadence et la fiabilité sur le terrain.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-base font-semibold">Pilotage des lancements</h3>
+          <p>
+            Aux côtés de l’organisation produit, nous avons soutenu les lancements par des business cases chiffrés et un suivi des KPI en temps réel. Les lancements ont ainsi été pilotés par la donnée dès J0, avec un alignement Marketing, Channel et e‑commerce sur les objectifs, leviers et actions correctives.
+          </p>
+        </div>
       </div>
     </div>
   )
@@ -90,7 +121,7 @@ export function SamsungCard() {
           </Card>
         </div>
       </DialogTrigger>
-      <DialogContent className="sm:rounded-lg">
+      <DialogContent className="sm:rounded-lg pt-0">
         <SamsungModalContent />
       </DialogContent>
     </Dialog>

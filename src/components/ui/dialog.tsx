@@ -38,7 +38,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:backdrop-blur",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:backdrop-blur cursor-pointer",
         className
       )}
       {...props}
@@ -60,7 +60,7 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-none sm:rounded-lg border p-6 pt-36 shadow-lg duration-200 sm:max-w-3xl md:max-w-4xl lg:max-w-5xl w-screen sm:w-auto h-[100dvh] sm:h-auto sm:max-h-[85vh] overflow-y-auto",
+          "relative bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 rounded-none sm:rounded-lg border p-6 pt-36 shadow-lg duration-200 w-screen sm:w-[88vw] md:w-[84vw] lg:w-[80vw] xl:w-[78vw] 2xl:w-[72vw] max-w-[1500px] h-[100dvh] sm:h-auto sm:max-h-[90vh] overflow-y-auto",
           className
         )}
         {...props}
@@ -69,7 +69,7 @@ function DialogContent({
         {showCloseButton && (
           <DialogPrimitive.Close
             data-slot="dialog-close"
-            className="absolute top-4 left-4 inline-flex items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-colors shadow-sm border border-border/40 w-11 h-11 p-0 focus:outline-hidden"
+            className="absolute top-4 left-4 inline-flex items-center justify-center rounded-full bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground transition-colors border border-border/40 w-11 h-11 p-0 focus:outline-hidden cursor-pointer"
           >
             <XIcon className="w-[22px] h-[22px]" />
             <span className="sr-only">Close</span>
