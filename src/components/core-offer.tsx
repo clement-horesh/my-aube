@@ -211,7 +211,7 @@ export function GradientSection() {
         {/* Bottom Section */}
         <div className="flex flex-col pt-10">
           <h2 className="text-xl font-semibold text-foreground">Business Analyse</h2>
-          <p className="max-w-full text-foreground/50 mb-6 mt-5">
+          <p className="max-w-full text-foreground/50 mb-10 mt-5">
             Nous aidons les équipes à relier les points entre données, processus et objectifs
             métiers. En partant des faits, nous clarifions les questions clés, identifions les
             leviers de croissance et transformons les signaux faibles en décisions concrètes.
