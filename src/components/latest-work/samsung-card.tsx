@@ -59,7 +59,7 @@ export function SamsungCard() {
                 alt="Samsung Logo"
                 width={100}
                 height={100}
-                className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-auto opacity-60 grayscale contrast-75"
+                className="absolute left-1/2 top-[40%] transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-auto opacity-60 grayscale contrast-75 dark:invert"
                 priority={false}
               />
             </div>
@@ -80,7 +80,7 @@ export function SamsungCard() {
                   <div className="text-lg font-semibold">Samsung</div>
                   <div className="text-sm text-muted-foreground">Data Analytics Enablement</div>
                 </div>
-                <button aria-label="Open details" className="inline-flex items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground group-hover:bg-muted/80 group-hover:text-foreground transition-colors border border-border/40 w-11 h-11 cursor-pointer">
+                <button aria-label="Open details" className="inline-flex items-center justify-center rounded-full bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground group-hover:bg-muted group-hover:text-foreground transition-colors border border-border/40 w-11 h-11 cursor-pointer">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[22px] h-[22px]">
                     <path d="M12 5v14M5 12h14" />
                   </svg>

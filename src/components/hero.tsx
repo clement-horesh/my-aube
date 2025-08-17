@@ -4,6 +4,7 @@ import { useTheme } from "@/hooks/use-theme";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 function HeroText() {
@@ -19,9 +20,8 @@ function HeroText() {
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mx-auto sm:mx-0">
         <Button  className="w-fit">Analysons</Button>
-        <Button variant="ghost" className="w-fit">
-          Nous Contacter
-          <ChevronRight />
+        <Button asChild variant="ghost" className="w-fit">
+          <Link href="/contact">Nous Contacter<ChevronRight /></Link>
         </Button>
       </div>
     </div>

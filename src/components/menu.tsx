@@ -3,9 +3,13 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Menu() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,38 +42,66 @@ export function Menu() {
       <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl transition-all duration-1000  mx-auto flex items-center justify-between py-3 px-4">
         {/* Logo */}
         <div className="flex items-center">
-          <button 
-            onClick={scrollToTop}
-            className="relative w-15 h-8 cursor-pointer"
-          >
-            <Image
-              src="/Asset 1.svg"
-              alt="Aube Logo"
-              fill
-              className="object-contain filter dark:invert"
-              priority
-            />
-          </button>
+          {isHome ? (
+            <button 
+              onClick={scrollToTop}
+              className="relative w-15 h-8 cursor-pointer"
+            >
+              <Image
+                src="/Asset 1.svg"
+                alt="Aube Logo"
+                fill
+                className="object-contain filter dark:invert"
+                priority
+              />
+            </button>
+          ) : (
+            <Link href="/" className="relative w-15 h-8 cursor-pointer block">
+              <Image
+                src="/Asset 1.svg"
+                alt="Aube Logo"
+                fill
+                className="object-contain filter dark:invert"
+                priority
+              />
+            </Link>
+          )}
         </div>
 
         {/* Navigation Items */}
         <div className="flex items-center space-x-6">
-          <button 
-            onClick={() => scrollToSection('core-offer')}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-          >
-            Overview
-          </button>
-          <button 
-            onClick={() => scrollToSection('latest-work')}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-          >
-            Work
-          </button>
-          <Button 
-            className="cursor-pointer"
-          >
-            Contact
+          {isHome ? (
+            <button 
+              onClick={() => scrollToSection('core-offer')}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              Overview
+            </button>
+          ) : (
+            <Link 
+              href="/#core-offer"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              Overview
+            </Link>
+          )}
+          {isHome ? (
+            <button 
+              onClick={() => scrollToSection('latest-work')}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              Work
+            </button>
+          ) : (
+            <Link 
+              href="/#latest-work"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              Work
+            </Link>
+          )}
+          <Button asChild className="cursor-pointer">
+            <Link href="/contact">Contact</Link>
           </Button>
         </div>
       </div>
