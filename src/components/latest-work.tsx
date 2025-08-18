@@ -14,7 +14,7 @@ export function CarouselDemo() {
   return (
     <div id="latest-work" className="w-full overflow-x-hidden bg-gradient-to-b from-neutral-100 to-transparent dark:from-neutral-900 dark:to-transparent" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
       <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl overflow-visible mx-auto px-4 sm:px-6 lg:px-8 pt-50 pb-30">
-      <h1 className="text-6xl leading-[1.1] font-[538] tracking-[-0.0325em]">Our Latest<br/>Work</h1>
+      <h1 className="text-6xl leading-[1.1] font-[538] tracking-[-0.0325em]">Travaux<br/>récents</h1>
       <Carousel 
         className="w-full pt-15"
         opts={{

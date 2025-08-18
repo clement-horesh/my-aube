@@ -72,8 +72,8 @@ export default function ContactPage() {
     <main className="min-h-screen flex flex-col">
       <Menu />
 
-      <section className="pt-28 pb-16 px-4">
-        <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+      <section className="pt-28 pb-16 ">
+        <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-4 transition-all duration-1000">
           <div className="max-w-2xl">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Contact</h1>
             <p className="mt-2 text-muted-foreground">

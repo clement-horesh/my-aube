@@ -74,10 +74,10 @@ export function TrustedBy() {
         {/* Centered text */}
         <div className="mb-20">
           <h2 className="text-lg sm:text-xl font-bold text-foreground">
-            Powering the world's best product teams.
+          Propulse les équipes produit les plus performantes au monde.
           </h2>
           <p className="text-lg sm:text-xl font-medium text-muted-foreground">
-            From next-gen startups to established enterprises.
+          Des entreprises émergentes aux sociétés historiques.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export function TrustedBy() {
                 scrollToSection('latest-work')
               }}
             >
-              See Work
+              Nos réalisations
               <svg
                 className="w-3 h-3"
                 fill="none"
