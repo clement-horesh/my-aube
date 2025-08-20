@@ -34,7 +34,7 @@ function HeroText() {
         {isHome ? (
           <Button variant="ghost" className="w-fit" onClick={() => scrollToSection('core-offer')}>
             <span className="flex items-center gap-2">
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_8px_rgba(251,146,60,0.8)] animate-[pulse_3s_ease-in-out_infinite]" />
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)] animate-[pulse_3s_ease-in-out_infinite]" />
               <span>Notre expertise</span>
               <ChevronRight />
             </span>
@@ -42,7 +42,7 @@ function HeroText() {
         ) : (
           <Button asChild variant="ghost" className="w-fit">
             <Link href="/#core-offer" className="flex items-center gap-2">
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_8px_rgba(251,146,60,0.8)] animate-[pulse_1s_ease-in-out_infinite]" />
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)] animate-[pulse_1s_ease-in-out_infinite]" />
               <span>Decouvrir nos solutions</span>
               <ChevronRight />
             </Link>

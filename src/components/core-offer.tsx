@@ -8,7 +8,7 @@ export function GradientSection() {
   return (
     <div id="core-offer" className="w-full bg-gradient-to-b from-neutral-100 to-neutral-0 dark:from-neutral-900 dark:to-neutral-950" style={{ backgroundSize: '100% 250px', backgroundRepeat: 'no-repeat' }}>
       <div className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-4 pt-50 pb-30">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl leading-[1.1] font-[538] tracking-[-0.0325em] mb-10">Nos domaines<br/>d'expertise</h1>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl leading-[1.1] font-[538] tracking-[-0.0325em] mb-10">Nos domaines<br/>d&apos;expertise</h1>
         
         {/* Top Section */}
         <h3 className="text-xl font-semibold text-foreground mb-5">Data Analyse</h3>

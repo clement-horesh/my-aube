@@ -1,5 +1,4 @@
 import * as React from "react"
-import Link from "next/link"
 import { SamsungBanner, SamsungBody } from "@/components/work/samsung-content"
 import {
   Breadcrumb,
