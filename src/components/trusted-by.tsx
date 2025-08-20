@@ -74,7 +74,7 @@ export function TrustedBy() {
         {/* Centered text */}
         <div className="mb-20">
           <h2 className="text-lg sm:text-xl font-bold text-foreground">
-          Propulse les équipes produit les plus performantes au monde.
+          Aube propulse les équipes les plus performantes au monde.
           </h2>
           <p className="text-lg sm:text-xl font-medium text-muted-foreground">
           Des entreprises émergentes aux sociétés historiques.
@@ -158,7 +158,7 @@ export function TrustedBy() {
               }}
               className="pointer-events-auto text-sm font-medium text-foreground bg-neutral-100 dark:bg-neutral-900 border border-foreground/15 px-3 py-1.5 rounded-4xl cursor-pointer flex items-center gap-1"
             >
-              See Work
+              Nos réalisations
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

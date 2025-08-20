@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { SamsungCard, HpeCard } from "./latest-work/index"
+import { WorkTileCard } from "./latest-work/work-tile-card"
 
 export function CarouselDemo() {
   return (
@@ -25,12 +25,24 @@ export function CarouselDemo() {
         <CarouselContent className="-ml-0">
           {/* Samsung */}
           <CarouselItem className="pl-0 basis-auto min-w-[320px]">
-            <SamsungCard />
+            <WorkTileCard
+              href="/work/samsung"
+              title="Samsung"
+              subtitle="Data Analytics Enablement"
+              imageSrc="/SamsungS25.svg"
+              imageAlt="Samsung Logo"
+            />
           </CarouselItem>
 
           {/* HPE */}
           <CarouselItem className="pl-0 basis-auto min-w-[320px]">
-            <HpeCard />
+            <WorkTileCard
+              href="/work/hpe"
+              title="HPE"
+              subtitle="Channel Performance Intelligence"
+              imageSrc="/HPE.svg"
+              imageAlt="HPE Logo"
+            />
           </CarouselItem>
 
           {/* More coming soon */}

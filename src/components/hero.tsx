@@ -1,28 +1,53 @@
 "use client"
-import { Menu } from "@/components/menu";
 import { useTheme } from "@/hooks/use-theme";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 function HeroText() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="flex flex-col gap-4 text-center sm:text-left relative z-20">
       <h1 className="text-5xl sm:text-5xl lg:text-6xl max-w-xl transition-all duration-1000 font-bold bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-gray-400 dark:via-gray-200 dark:to-white bg-clip-text text-transparent leading-none">
-      Mettez en <span className="bg-gradient-to-r from-rose-400 via-orange-400 via-yellow-400 via-sky-50 via-sky-300 to-sky-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,146,60,0.3)] dark:drop-shadow-[0_0_10px_rgba(251,146,60,0.4)] animate-[pulse_2s_ease_forwards]">lumière</span> vos performances.
+      <span className="bg-gradient-to-r from-rose-400 via-orange-400 via-yellow-400 via-sky-50 via-sky-300 to-sky-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,146,60,0.3)] dark:drop-shadow-[0_0_10px_rgba(251,146,60,0.4)] animate-[pulse_2s_ease_forwards]">Lumière</span> sur vos performances.
 
       </h1>
-      <p className="text-base sm:text-lg max-w-2xl text-muted-foreground transition-all duration-1000 leading-relaxed">
-      Mettez vos données au service de votre stratégie.<br/>Visualisez ce qui compte, analysez mieux, décidez plus vite.
+      <p className="text-base sm:text-lg max-w-lg text-muted-foreground transition-all duration-1000 leading-relaxed">
+      Mettez vos données au service de votre stratégie. Visualisez ce qui compte, analysez mieux, décidez plus vite.
 
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mx-auto sm:mx-0">
-        <Button  className="w-fit">Analysons</Button>
-        <Button asChild variant="ghost" className="w-fit">
-          <Link href="/contact">Nous Contacter<ChevronRight /></Link>
+        <Button asChild className="w-fit">
+          <Link href="/contact">Nous contacter</Link>
         </Button>
+        {isHome ? (
+          <Button variant="ghost" className="w-fit" onClick={() => scrollToSection('core-offer')}>
+            <span className="flex items-center gap-2">
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_8px_rgba(251,146,60,0.8)] animate-[pulse_3s_ease-in-out_infinite]" />
+              <span>Notre expertise</span>
+              <ChevronRight />
+            </span>
+          </Button>
+        ) : (
+          <Button asChild variant="ghost" className="w-fit">
+            <Link href="/#core-offer" className="flex items-center gap-2">
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_8px_rgba(251,146,60,0.8)] animate-[pulse_1s_ease-in-out_infinite]" />
+              <span>Decouvrir nos solutions</span>
+              <ChevronRight />
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -97,9 +122,6 @@ export function Hero() {
           backgroundSize: '20px 20px, 20px 20px',
         }}
       />
-      
-      {/* Menu Overlay */}
-      <Menu />
       
       {/* Hero Content - With appropriate top padding for menu */}
       <div className="relative z-20 pt-32 ">
