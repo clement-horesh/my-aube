@@ -123,9 +123,7 @@ export function DotConnectorGrid({
       }
     }
 
-    function randomIndex(maxExclusive: number) {
-      return Math.floor(Math.random() * maxExclusive)
-    }
+    
 
     // Grid helpers and pathfinding (A*)
     function indexToRowCol(index: number): { r: number; c: number } {
