@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu } from "@/components/menu";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,11 +16,76 @@ type ContactFormData = {
   phone: string
 }
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: string | HTMLElement,
+        options: {
+          sitekey: string
+          callback?: (token: string) => void
+          "error-callback"?: () => void
+          "expired-callback"?: () => void
+          theme?: "light" | "dark" | "auto"
+          size?: "normal" | "flexible" | "compact"
+        }
+      ) => string
+      reset: (widgetId?: string) => void
+      getResponse?: (widgetId?: string) => string | undefined
+    }
+  }
+}
+
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [widgetId, setWidgetId] = useState<string | null>(null);
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+  // Load Cloudflare Turnstile script once
+  useEffect(() => {
+    const existing = document.querySelector('script[data-turnstile]');
+    if (existing) return;
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    script.setAttribute('data-turnstile', 'true');
+    document.head.appendChild(script);
+    return () => {
+      script.remove();
+    };
+  }, []);
+
+  // Render the widget when script available
+  useEffect(() => {
+    if (!widgetRef.current) return;
+    const interval = window.setInterval(() => {
+      if (window.turnstile && !widgetId) {
+        if (!siteKey) {
+          setStatusMessage("Le captcha n'est pas configuré. Ajoutez NEXT_PUBLIC_TURNSTILE_SITE_KEY.");
+          setStatusType("error");
+          window.clearInterval(interval);
+          return;
+        }
+        const id = window.turnstile.render(widgetRef.current!, {
+          sitekey: siteKey,
+          theme: "auto",
+          size: "flexible",
+          callback: (token) => setCaptchaToken(token),
+          "expired-callback": () => setCaptchaToken(null),
+          "error-callback": () => setCaptchaToken(null),
+        });
+        setWidgetId(id);
+        window.clearInterval(interval);
+      }
+    }, 200);
+    return () => window.clearInterval(interval);
+  }, [widgetId, siteKey]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -29,16 +94,20 @@ export default function ContactPage() {
     setStatusType(null);
 
     const formData = new FormData(event.currentTarget);
-    const payload: ContactFormData = {
+    const payload: ContactFormData & { turnstileToken?: string } = {
       email: String(formData.get("email") || ""),
       firstName: String(formData.get("firstName") || ""),
       lastName: String(formData.get("lastName") || ""),
       company: String(formData.get("company") || ""),
       need: String(formData.get("need") || ""),
       phone: String(formData.get("phone") || ""),
+      turnstileToken: captchaToken || undefined,
     };
 
     try {
+      if (!payload.turnstileToken) {
+        throw new Error("Veuillez compléter la vérification anti‑robot.");
+      }
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -55,6 +124,10 @@ export default function ContactPage() {
         setStatusMessage("Merci, votre message a bien été envoyé.");
         setStatusType("success");
         formRef.current?.reset();
+        setCaptchaToken(null);
+        if (window.turnstile && widgetId) {
+          window.turnstile.reset(widgetId);
+        }
       } else {
         throw new Error(data.error || "Réponse inattendue du serveur");
       }
@@ -106,8 +179,16 @@ export default function ContactPage() {
               <Label htmlFor="need">Votre besoin</Label>
               <Textarea id="need" name="need" placeholder="Décrivez votre besoin..." className="min-h-32" required />
             </div>
+            <div className="sm:col-span-2">
+              <div ref={widgetRef} className="mt-2" />
+              {!siteKey && (
+                <p className="text-sm text-red-600 dark:text-red-400 mt-2">
+                  Captcha indisponible: configurez NEXT_PUBLIC_TURNSTILE_SITE_KEY pour activer l'envoi.
+                </p>
+              )}
+            </div>
             <div className="sm:col-span-2 flex items-center gap-3 pt-2">
-              <Button type="submit" disabled={isSubmitting}>
+              <Button type="submit" disabled={isSubmitting || !captchaToken}>
                 {isSubmitting ? "Envoi..." : "Envoyer"}
               </Button>
               {statusMessage && (

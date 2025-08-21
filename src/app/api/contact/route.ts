@@ -12,18 +12,50 @@ type ContactFormData = {
   phone: string
 }
 
+type TurnstileVerifyResponse = {
+  success: boolean
+  challenge_ts?: string
+  hostname?: string
+  "error-codes"?: string[]
+  action?: string
+  cdata?: string
+}
+
 function isValidEmail(value: string): boolean {
   return /.+@.+\..+/.test(value);
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as Partial<ContactFormData> | null;
+    const body = (await request.json()) as (Partial<ContactFormData> & { turnstileToken?: string | null }) | null;
     if (!body) {
       return NextResponse.json({ error: "Invalid body" }, { status: 400 });
     }
 
-    const { email, firstName, lastName, company, need, phone } = body;
+    const { email, firstName, lastName, company, need, phone, turnstileToken } = body;
+
+    // Verify Turnstile token
+    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+    if (!turnstileSecretKey) {
+      return NextResponse.json(
+        { error: "Captcha non configuré côté serveur (clé secrète manquante)." },
+        { status: 500 }
+      );
+    }
+    if (!turnstileToken) {
+      return NextResponse.json({ error: "Vérification anti‑robot requise." }, { status: 400 });
+    }
+
+    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret: turnstileSecretKey, response: String(turnstileToken) }),
+    });
+    const verifyJson = (await verifyRes.json()) as TurnstileVerifyResponse;
+    if (!verifyJson.success) {
+      console.warn("Turnstile verification failed:", verifyJson["error-codes"]);
+      return NextResponse.json({ error: "Échec de la vérification anti‑robot." }, { status: 400 });
+    }
 
     if (!email || !isValidEmail(email)) {
       return NextResponse.json({ error: "Email invalide" }, { status: 400 });

@@ -34,3 +34,26 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Contact form anti‑abuse (Cloudflare Turnstile)
+
+The contact form uses Cloudflare Turnstile for bot protection.
+
+1. Create a Turnstile site in your Cloudflare dashboard and get:
+   - Site key
+   - Secret key
+2. Add the following environment variables:
+
+```bash
+# Public (exposed to browser)
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_site_key
+
+# Server-only
+TURNSTILE_SECRET_KEY=your_secret_key
+```
+
+3. Redeploy/restart the app.
+
+Notes:
+- If the secret key is missing or verification fails, the API returns 400/500 and the email is not sent.
+- The widget resets after successful submission.
