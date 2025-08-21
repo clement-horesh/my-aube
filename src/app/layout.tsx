@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Menu } from "@/components/menu";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,10 +18,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Aube",
   description: "Aube - Innovation and Technology Solutions",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" }
-  ],
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -62,6 +59,7 @@ export default function RootLayout({
           <Menu />
           {children}
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
