@@ -183,7 +183,7 @@ export default function ContactPage() {
               <div ref={widgetRef} className="mt-2" />
               {!siteKey && (
                 <p className="text-sm text-red-600 dark:text-red-400 mt-2">
-                  Captcha indisponible: configurez NEXT_PUBLIC_TURNSTILE_SITE_KEY pour activer l'envoi.
+                  Captcha indisponible: configurez NEXT_PUBLIC_TURNSTILE_SITE_KEY pour activer l&apos;envoi.
                 </p>
               )}
             </div>
