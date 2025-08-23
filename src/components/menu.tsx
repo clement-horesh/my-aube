@@ -75,14 +75,14 @@ export function Menu() {
               onClick={() => scrollToSection('core-offer')}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
-              Overview
+              Expertise
             </button>
           ) : (
             <Link 
               href="/#core-offer"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
-              Overview
+              Expertise
             </Link>
           )}
           {isHome ? (
@@ -90,14 +90,14 @@ export function Menu() {
               onClick={() => scrollToSection('latest-work')}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
-              Work
+              Collaborations
             </button>
           ) : (
             <Link 
               href="/#latest-work"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
-              Work
+              Collaborations
             </Link>
           )}
           <Button asChild className="cursor-pointer">

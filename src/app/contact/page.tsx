@@ -157,23 +157,23 @@ export default function ContactPage() {
           <form ref={formRef} onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <Label htmlFor="firstName">Prénom</Label>
-              <Input id="firstName" name="firstName" placeholder="Jean" required />
+              <Input id="firstName" name="firstName" placeholder="Prénom" required />
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="lastName">Nom</Label>
-              <Input id="lastName" name="lastName" placeholder="Dupont" required />
+              <Input id="lastName" name="lastName" placeholder="Nom" required />
             </div>
             <div className="flex flex-col gap-2 sm:col-span-2">
               <Label htmlFor="company">Entreprise</Label>
-              <Input id="company" name="company" placeholder="Votre société" />
+              <Input id="company" name="company" placeholder="Nom de l'entreprise" />
             </div>
             <div className="flex flex-col gap-2 sm:col-span-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" inputMode="email" placeholder="vous@exemple.com" required />
+              <Input id="email" name="email" type="email" inputMode="email" placeholder="example@company.com" required />
             </div>
             <div className="flex flex-col gap-2 sm:col-span-2">
               <Label htmlFor="phone">Téléphone</Label>
-              <Input id="phone" name="phone" type="tel" inputMode="tel" placeholder="+33 6 12 34 56 78" />
+              <Input id="phone" name="phone" type="tel" inputMode="tel" placeholder="Numéro de téléphone" />
             </div>
             <div className="flex flex-col gap-2 sm:col-span-2">
               <Label htmlFor="need">Votre besoin</Label>

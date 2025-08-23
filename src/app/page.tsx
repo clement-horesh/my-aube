@@ -4,6 +4,7 @@ import { CarouselDemo } from "@/components/latest-work";
 import { TrustedBy } from "@/components/trusted-by";
 import { Hero } from "@/components/hero";
 import { GradientSection } from "@/components/core-offer";
+import { FeaturedWork } from "@/components/featured-work";
 
 export default function Home() {
   return (
@@ -16,8 +17,7 @@ export default function Home() {
         <TrustedBy />
       </section>
 
-      {/* Spacer Section (empty for now) */}
-      <section className="relative z-10 py-12" id="spacer-below-trusted-by"></section>
+
 
       {/* Gradient Section */}
       <section className="relative z-10">

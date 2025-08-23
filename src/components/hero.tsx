@@ -20,7 +20,7 @@ function HeroText() {
   return (
     <div className="flex flex-col gap-4 text-center sm:text-left relative z-20">
       <h1 className="text-5xl sm:text-5xl lg:text-6xl max-w-xl transition-all duration-1000 font-bold bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-gray-400 dark:via-gray-200 dark:to-white bg-clip-text text-transparent leading-none">
-      <span className="bg-gradient-to-r from-rose-400 via-orange-400 via-yellow-400 via-sky-50 via-sky-300 to-sky-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,146,60,0.3)] dark:drop-shadow-[0_0_10px_rgba(251,146,60,0.4)] animate-[pulse_2s_ease_forwards]">Lumière</span> sur vos performances.
+      <span className="bg-gradient-to-r from-rose-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,146,60,0.3)] dark:drop-shadow-[0_0_10px_rgba(251,146,60,0.4)] animate-[pulse_2s_ease_forwards]">Lumière</span> sur vos performances.
 
       </h1>
       <p className="text-base sm:text-lg max-w-lg text-muted-foreground transition-all duration-1000 leading-relaxed">
@@ -76,19 +76,19 @@ function HeroImage() {
       <div className="relative max-w-[91%] mx-auto">
         {/* Background cards for stacked effect - vertical stacking with scaling */}
         <div 
-          className={`absolute -top-2 sm:-top-4 lg:-top-10 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[90%] h-full bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 dark:border-neutral-300/10 scale-100 transition-all duration-1000 ease-out ${
+          className={`absolute -top-4 sm:-top-6 md:-top-8 lg:-top-10 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[90%] h-full bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 dark:border-neutral-300/10 scale-100 transition-all duration-1000 ease-out ${
             showCard1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         ></div>
         <div 
-          className={`absolute -top-1 sm:-top-2 lg:-top-5 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[95%] h-full bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 dark:border-neutral-300/10 scale-100 transition-all duration-1000 ease-out ${
+          className={`absolute -top-2 sm:-top-3 md:-top-4 lg:-top-5 left-1/2 transform backdrop-blur-xs -translate-x-1/2 w-[95%] h-full bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 dark:border-neutral-300/10 scale-100 transition-all duration-1000 ease-out ${
             showCard2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         ></div>
 
         {/* Main card */}
         <div 
-          className={`relative bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 backdrop-blur-xs dark:border-neutral-300/10 p-1 sm:p-2 lg:p-5 transition-all duration-1000 ease-out ${
+          className={`relative bg-neutral-300/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-600/10 backdrop-blur-xs dark:border-neutral-300/10 p-2 sm:p-3 md:p-4 lg:p-5 transition-all duration-1000 ease-out ${
             showMainCard ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
